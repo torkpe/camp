@@ -16,8 +16,8 @@ var User            = require("./models/user");
 var commentRoutes       = require("./routes/comment");
 var campgroundRoutes    = require("./routes/campground");
 var indexRoutes         = require("./routes/index")
-mongoose.connect(process.env.MONGODB_URI);
-// mongoose.connect("mongodb://localhost/aremu_camp");
+// mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost/aremu_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -29,7 +29,7 @@ app.use(flash());
 app.use(require("cookie-session")({
     secret: "I love my siblings",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
