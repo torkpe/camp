@@ -11,6 +11,7 @@ var methodOverride  = require("method-override")
 var Campground      = require("./models/campground");
 var Comment         = require("./models/comment");
 var User            = require("./models/user");
+var path            = require('path');
 //var seedDB          = require("./seed");
 
 var commentRoutes       = require("./routes/comment");
@@ -27,7 +28,7 @@ var indexRoutes         = require("./routes/index")
 mongoose.connect("mongodb://localhost/aremu_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, './public')));
 app.use(methodOverride("_method"));
 //seedDB();
 app.use(flash());
