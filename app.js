@@ -26,7 +26,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 //PASSPORT CONFIGURATION
-app.use(require("express-session")({
+app.use(require("cookie-session")({
     secret: "I love my siblings",
     resave: false,
     saveUninitialized: true
