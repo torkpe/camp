@@ -29,7 +29,7 @@ app.use(flash());
 app.use(require("express-session")({
     secret: "I love my siblings",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
