@@ -16,7 +16,14 @@ var User            = require("./models/user");
 var commentRoutes       = require("./routes/comment");
 var campgroundRoutes    = require("./routes/campground");
 var indexRoutes         = require("./routes/index")
-// mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect(process.env.MONGODB_URI, function(err, client) {
+//   if(err) {
+//     console.log('failed to connect to db');
+//   }
+//   if(client) {
+//     console.log('oconnected to bd');
+//   }
+// });
 mongoose.connect("mongodb://localhost/aremu_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
