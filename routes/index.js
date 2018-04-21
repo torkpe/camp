@@ -9,7 +9,7 @@ router.get("/", function(req,res){
 
 //Show register form
 router.get("/register", function(req, res){
-    res.render("Register");
+    res.render("register");
 });
 
 //=========================
