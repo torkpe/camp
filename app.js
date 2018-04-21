@@ -17,7 +17,7 @@ var path            = require('path');
 var commentRoutes       = require("./routes/comment");
 var campgroundRoutes    = require("./routes/campground");
 var indexRoutes         = require("./routes/index")
-mongoose.connect(process.env.MONGODB_URI, function(err, client) {
+mongoose.connect(process.env.MONGODB_URI, { server: { auto_reconnect: true } }, function(err, client) {
   if(err) {
     console.log('failed to connect to db');
   }
